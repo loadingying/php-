@@ -1,0 +1,36 @@
+#main{
+  position: relative;
+}
+#header-container{
+  position: fixed;
+  top: 0px;
+  margin: 0 0 20px 0;
+  display: block;
+  width: 100%;
+  background-color: #3280fc;
+  padding: 18px 0px;
+  z-index: 1000;
+  font-size: 20px;
+  line-height: 32px;
+}
+.clear::after{
+  content: '';
+}
+#main-container{
+  position: relative;
+  top: 80px;
+}
+#main-container .col-3 .nav > li{
+  width: 100%;
+}
+#main-container .col-9 .row{
+  width: 100%;
+}
+#hd_container{
+  text-align: center;
+  width: 100%;
+}
+.l{
+  float: left !important;
+  padding-bottom: 30px;
+}

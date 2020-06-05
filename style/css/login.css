@@ -1,0 +1,22 @@
+#main{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ }   
+#fromLogin{
+  display: block;
+  position: relative;
+  top:20%;
+}
+#logo{
+  display: block;
+  margin-left: 38%;
+  text-align: 50px;
+}
+#registered_a{
+  color: white;
+  z-index: 10000;
+}
+#message{
+  color: red;
+}
