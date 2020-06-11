@@ -100,7 +100,7 @@
     else
     {
       //YOUR ACCESS_KEY、YOUR ACCESS_SECRET请替换成您的阿里云accesskey id和secret  
-      $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "LTAI4FnMZXnRNpPRcd31bd3o", "aPuJwsaZKHzgIssQrKlyHibrG5AiUA");
+      $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "#################", "##########################");
       $client = new DefaultAcsClient($iClientProfile);
       DefaultProfile::addEndpoint("cn-hangzhou", "cn-hangzhou", "afs", "afs.aliyuncs.com");
 
