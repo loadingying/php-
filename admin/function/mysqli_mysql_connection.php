@@ -1,6 +1,6 @@
 <?php
   function link_mysql(){
-    $link=mysqli_connect('mysql','activityDate','mEbhc6OqWcslGmRv','activityDate','3306');
+    $link=mysqli_connect('mysql','activityDate','#########','activityDate','3306');
     if(mysqli_connect_errno())
     {
       exit(mysqli_connect_error());
