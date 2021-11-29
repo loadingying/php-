@@ -45,16 +45,6 @@ CREATE TABLE `activity` (
   `file` text COLLATE utf8_bin COMMENT '具体内容上传的文件'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='已创建的活动的信息表';
 
---
--- 转存表中的数据 `activity`
---
-
-INSERT INTO `activity` (`id`, `name`, `organization`, `createtime`, `publictime`, `signstarttime`, `signendtime`, `starttime`, `endtime`, `classification`, `sort`, `description`, `content`, `file`) VALUES
-(1, '示例活动', 1, '2020-03-17 15:43:25', '2020-03-19 15:53:40', '2020-03-20 15:41:25', '2020-03-25 15:41:25', '2020-03-25 15:41:25', '2020-03-27 15:41:25', '示例分类', 0, '这是示例活动的描述。', '这是示例活动的内容。', NULL),
-(6, '第一个活动', 1, '2020-03-25 11:09:13', '2020-03-25 00:59:00', '2020-03-26 00:00:00', '2020-03-26 00:00:00', '2020-03-27 00:00:00', '2020-03-27 23:59:00', '默认分类', 0, '第一个', '活动内容', '5;6;'),
-(18, '活动', 1, '2020-03-25 12:55:33', '2020-03-25 00:00:00', '2020-03-25 00:00:00', '2020-03-25 00:00:00', '2020-03-25 00:00:00', '2020-03-29 00:00:00', '默认分类', 0, '', '', '25;27;28;29;30;31;');
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `activityoption`
@@ -67,18 +57,6 @@ CREATE TABLE `activityoption` (
   `value` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='活动设置表';
 
---
--- 转存表中的数据 `activityoption`
---
-
-INSERT INTO `activityoption` (`id`, `name`, `activity`, `value`) VALUES
-(1, 'signpeople', 1, 0),
-(2, 'signpeople', 6, 1),
-(14, 'signpeople', 18, 1),
-(15, 'startpasswd', 18, 551885),
-(16, 'startpasswd', 1, 459949);
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `classification`
@@ -112,21 +90,7 @@ CREATE TABLE `file` (
   `sort` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- 转存表中的数据 `file`
---
 
-INSERT INTO `file` (`id`, `type`, `name`, `path`, `size`, `sort`) VALUES
-(5, 'application/msword', '期末考试重点与答案大全（稳过版）.doc', '../upload/202003/11034173821865913822.doc', 286720, 0),
-(6, 'application/pdf', '期末考试重点与答案大全（稳过版）.pdf', '../upload/202003/1770413981913817217.pdf', 65285, 0),
-(25, 'application/vnd.openxmlformats-officedocument.presentationml.presentation', '大学体育-发展体能PPT.pptx', '../upload/202003/1943307644594133961.pptx', 422955, 0),
-(27, 'image/png', '76b5129e32dae3805efb16a6d5bc60f.png', '../upload/202003/1926780343704205688.png', 139645, 0),
-(28, 'application/x-zip-compressed', 'aliyun-php-sdk-afs-20180112-2.zip', '../upload/202003/12044540591119910501.zip', 103991, 0),
-(29, 'application/x-zip-compressed', '仿站小工具.zip', '../upload/202003/92062819443490369.zip', 1042262, 0),
-(30, 'application/octet-stream', '汇编软件.rar', '../upload/202003/13950280991250768854.rar', 1556741, 0),
-(31, 'application/octet-stream', 'gravityWall.rar', '../upload/202003/2005086150453308683.rar', 10595949, 0);
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `op`
@@ -190,10 +154,7 @@ CREATE TABLE `people` (
 --
 
 INSERT INTO `people` (`id`, `name`, `classname`, `passwd`, `organizationID`, `organization`, `op`, `credit`) VALUES
-(1, 'root', '华', '123456', '20190310106', 1, 0, 100),
-(8, 'www', 'www', '123456', '020405', 1, 2, 100),
-(11, 'load', 'load', '123456', '123456', 1, 3, 100),
-(13, 'xxx', '成员', '123456', '9568', 1, 4, 100);
+(1, 'root', 'root', '123456', '20190310106', 1, 0, 100);
 
 -- --------------------------------------------------------
 
@@ -209,21 +170,7 @@ CREATE TABLE `peopleandactivity` (
   `status` int(11) NOT NULL DEFAULT '0' COMMENT '状态0为未报名1为已报名2为已录取3为已到场'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='人员报名表';
 
---
--- 转存表中的数据 `peopleandactivity`
---
 
-INSERT INTO `peopleandactivity` (`id`, `peopleid`, `activityid`, `sort`, `status`) VALUES
-(1, 1, 6, 0, 0),
-(2, 8, 6, 0, 0),
-(3, 11, 6, 0, 0),
-(5, 13, 6, 0, 0),
-(7, 13, 1, 0, 0),
-(8, 1, 1, 0, 2),
-(30, 1, 18, 0, 3),
-(31, 8, 18, 0, 3),
-(32, 11, 18, 0, 3),
-(34, 13, 18, 0, 3);
 
 --
 -- 转储表的索引
