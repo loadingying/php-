@@ -6,13 +6,11 @@
 
 ## 使用了阿里云的人机验证
 
-## 本地环境:centos7 docker php:7.2-apache
-
 ## 数据库版本:5.6.47
 
 ## PHP版本:7.2 ,依赖mysqli库
 
-## 线上环境:阿里云centos7 docker php:7.2-apache
+## 初学时写的系统，做得比较差
 
 ## 概述：
 
